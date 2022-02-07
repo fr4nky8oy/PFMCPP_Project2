@@ -254,7 +254,7 @@ int main()
     auto customEncoders = lookEncorder (100, 0, 99, 1.0f);
 
     
-    ignoreUnused(carRented, aiMode, efxType, grainMood, multiMod, routeToVu, selectCompType, customEncoders );
+    ignoreUnused(aiMode, efxType, grainMood, multiMod, routeToVu, selectCompType, customEncoders );
 
     std::cout << "good to go!" << std::endl;
     return 0;    
