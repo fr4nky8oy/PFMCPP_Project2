@@ -88,13 +88,13 @@ void variableDeclarations()
  10 functions
  example:
  note: this example shows the result after completing steps 3-8
- 
+ */
 bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
 { 
     ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
     return {}; //if your function returns something other than void, add 'return {};' at the end of it.
  } 
-*/
+
 
 /*
  1)
@@ -224,7 +224,7 @@ return{};
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    // auto carRented = rentACar(6, 2); 
+    auto carRented = rentACar(6, 2); 
     
     //1)
     compressAudio(20, 2);
@@ -254,7 +254,7 @@ int main()
     auto customEncoders = lookEncorder (100, 0, 99, 1.0f);
 
     
-    ignoreUnused(aiMode, efxType, grainMood, multiMod, routeToVu, selectCompType, customEncoders );
+    ignoreUnused(carRented, aiMode, efxType, grainMood, multiMod, routeToVu, selectCompType, customEncoders );
 
     std::cout << "good to go!" << std::endl;
     return 0;    
