@@ -94,119 +94,63 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
     ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
     return {}; //if your function returns something other than void, add 'return {};' at the end of it.
  } 
-
-
-/*
- 1)
- */
-
+//1)
 void compressAudio(int inputAmount = 20, int ratio = 2)
- 
 {
     ignoreUnused(inputAmount, ratio); 
 }
-
-/*
- 2)
- */
+//2)
 bool uiAutoLoad(bool aiSelect = true, char compressor = 'c', int circuitType = 6)
- 
 {
     ignoreUnused(aiSelect, compressor, circuitType); 
     return {}; 
 }
-
-/*
- 3)
- */
+ //3)
 int waterGrains( char granular = 'g', char flange = 'f', double artifacts = 12.20)
-
 {
     ignoreUnused(granular, flange, artifacts); 
     return {}; 
 }
-
-/*
- 4)
- */
-
+ //4)
 double setCloud( int windowSize = 15, int circuitType = 5,  double frequencyRange = 50.0)
-
 {
-  ignoreUnused(windowSize, circuitType, frequencyRange); 
+    ignoreUnused(windowSize, circuitType, frequencyRange); 
     return {}; 
 }
-
-/*
- 5)
- */
-
+ //5)
 void lookUi(int skinType = 30, unsigned int parameters = 3, unsigned int encoderSize = 10)
-
 {
-   ignoreUnused(skinType, parameters, encoderSize); 
+    ignoreUnused(skinType, parameters, encoderSize); 
 } 
-
-/*
- 6)
- */
-
+ //6)
 int modFlange(char flange = 'f', bool bypassOn = true, double lfoSpeed = 45.0)
-
 {
-  ignoreUnused(flange, bypassOn, lfoSpeed); 
-  return{};
+    ignoreUnused(flange, bypassOn, lfoSpeed); 
+    return{};
 }
-
-
-/*
- 7)
- */
+ //7)
 float meterSignal(unsigned int uiSize = 4, float gain = 0.1f, bool isPeaking = false)
-
 {
-
-ignoreUnused(uiSize, gain, isPeaking); 
-  return{};
-
+    ignoreUnused(uiSize, gain, isPeaking); 
+    return{};
 }
-
-
-/*
- 8)
- */
-
+ //8)
 int gseriesComp( double artifacts = 50.0, int circuitType = 34, float threshold = 1.0f )
 {
-
-ignoreUnused(artifacts, circuitType, threshold); 
-  return{};
-
+    ignoreUnused(artifacts, circuitType, threshold); 
+    return{};
 }
-
-/*
- 9)
- */
+//9)
 void multiModeType (char compressor = 'c', char flange = 'f', char granular = 'g', unsigned int uiSize = 0)
-
 {
-
-ignoreUnused(compressor, flange, granular, uiSize); 
-
+    ignoreUnused(compressor, flange, granular, uiSize); 
 }
-
-/*
- 10)
- */
-
+//10)
 float lookEncorder (int skinType = 100, unsigned int uiSize = 0, unsigned int encoderSize = 99, float colour = 1.0f)
-{
-    
-ignoreUnused(skinType, uiSize, encoderSize, colour); 
-return{};
-
+{   
+    ignoreUnused(skinType, uiSize, encoderSize, colour); 
+    return{};
 }
-
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -222,28 +166,22 @@ return{};
  */
 
 int main()
+
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
-    
     //1)
     compressAudio(20, 2);
-    
     //2)
     auto aiMode = uiAutoLoad(true, 'c', 6);
-    
     //3)
     auto efxType = waterGrains('g', 'f', 12.20);
-
     //4)
     auto grainMood = setCloud(15, 5, 50.0);
-    
     //5)
     lookUi(30, 3, 10);
-    
     //6)
     auto multiMod = modFlange('f', true, 45.0);
-    
     //7)
     auto routeToVu = meterSignal(4, 0.1f, false);
     //8)
@@ -253,7 +191,6 @@ int main()
     //10)
     auto customEncoders = lookEncorder (100, 0, 99, 1.0f);
 
-    
     ignoreUnused(carRented, aiMode, efxType, grainMood, multiMod, routeToVu, selectCompType, customEncoders );
 
     std::cout << "good to go!" << std::endl;
