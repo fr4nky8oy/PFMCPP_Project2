@@ -15,15 +15,13 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+int
+float
+bool
+double
+char
+string
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -57,12 +55,33 @@ video: Chapter 2 - Part 3
 //2)
 void variableDeclarations()
 {
-    //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    //examples:
+    int circuitType = -1; 
+    int skinType = 100; 
+    int windowSize = -20;
 
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    float gain = 0.1f;
+    float threshold = 0.2f; 
+    float attackTime = 1.0f; 
+
+    bool aiSelect = true;
+    bool bypassOn = true;
+    bool isPeaking = false;
+
+    double frequencyRange = 50.0; 
+    double lfoSpeed = 10.0; 
+    double artifacts = 123.0; 
+
+    char compressor = 'c';
+    char flange = 'f'; 
+    char granular = 'g';
+
+    unsigned int uiSize = 1; 
+    unsigned int parameters = 10;
+    unsigned int encoderSize = 99;
+
+    ignoreUnused(circuitType, skinType, windowSize, gain, threshold, attackTime, aiSelect, bypassOn, isPeaking, frequencyRange, lfoSpeed, artifacts, compressor, flange, granular, uiSize, parameters, encoderSize); //passing each variable declared to the ignoreUnused() function
+
 }
 
 /*
@@ -74,48 +93,64 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 { 
     ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
     return {}; //if your function returns something other than void, add 'return {};' at the end of it.
+ } 
+//1)
+void compressAudio(int inputAmount = 20, int ratio = 2)
+{
+    ignoreUnused(inputAmount, ratio); 
+}
+//2)
+bool uiAutoLoad(bool aiSelect = true, char compressor = 'c', int circuitType = 6)
+{
+    ignoreUnused(aiSelect, compressor, circuitType); 
+    return {}; 
+}
+ //3)
+int waterGrains( char granular = 'g', char flange = 'f', double artifacts = 12.20)
+{
+    ignoreUnused(granular, flange, artifacts); 
+    return {}; 
+}
+ //4)
+double setCloud( int windowSize = 15, int circuitType = 5,  double frequencyRange = 50.0)
+{
+    ignoreUnused(windowSize, circuitType, frequencyRange); 
+    return {}; 
+}
+ //5)
+void lookUi(int skinType = 30, unsigned int parameters = 3, unsigned int encoderSize = 10)
+{
+    ignoreUnused(skinType, parameters, encoderSize); 
 } 
-
-/*
- 1)
- */
-
-/*
- 2)
- */
-
-/*
- 3)
- */
-
-/*
- 4)
- */
-
-/*
- 5)
- */
-
-/*
- 6)
- */
-
-/*
- 7)
- */
-
-/*
- 8)
- */
-
-/*
- 9)
- */
-
-/*
- 10)
- */
-
+ //6)
+int modFlange(char flange = 'f', bool bypassOn = true, double lfoSpeed = 45.0)
+{
+    ignoreUnused(flange, bypassOn, lfoSpeed); 
+    return{};
+}
+ //7)
+float meterSignal(unsigned int uiSize = 4, float gain = 0.1f, bool isPeaking = false)
+{
+    ignoreUnused(uiSize, gain, isPeaking); 
+    return{};
+}
+ //8)
+int gseriesComp( double artifacts = 50.0, int circuitType = 34, float threshold = 1.0f )
+{
+    ignoreUnused(artifacts, circuitType, threshold); 
+    return{};
+}
+//9)
+void multiModeType (char compressor = 'c', char flange = 'f', char granular = 'g', unsigned int uiSize = 0)
+{
+    ignoreUnused(compressor, flange, granular, uiSize); 
+}
+//10)
+float lookEncorder (int skinType = 100, unsigned int uiSize = 0, unsigned int encoderSize = 99, float colour = 1.0f)
+{   
+    ignoreUnused(skinType, uiSize, encoderSize, colour); 
+    return{};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -131,32 +166,33 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
 
 int main()
+
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
-    
     //1)
-    
+    compressAudio(20, 2);
     //2)
-    
+    auto aiMode = uiAutoLoad(true, 'c', 6);
     //3)
-    
+    auto efxType = waterGrains('g', 'f', 12.20);
     //4)
-    
+    auto grainMood = setCloud(15, 5, 50.0);
     //5)
-    
+    lookUi(30, 3, 10);
     //6)
-    
+    auto multiMod = modFlange('f', true, 45.0);
     //7)
-    
+    auto routeToVu = meterSignal(4, 0.1f, false);
     //8)
-    
+    auto selectCompType = gseriesComp(50.0, 34, 1.0f);
     //9)
-    
+    multiModeType ('c', 'f', 'g', 0);
     //10)
-    
-    
-    ignoreUnused(carRented);
+    auto customEncoders = lookEncorder (100, 0, 99, 1.0f);
+
+    ignoreUnused(carRented, aiMode, efxType, grainMood, multiMod, routeToVu, selectCompType, customEncoders );
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
